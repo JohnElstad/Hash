@@ -4,18 +4,18 @@
 #include <ctime>
 
 using namespace std;
-
-
-
+//Hash table that cana add students, delete students and randomly add students.
 HashTable::HashTable(){ 
 
   array = new Node*[100];
   size = 100;
 }
+//adds your basic student
 void HashTable::add(){
 
   add(new Student());
 }
+//looks through the array and deletes if its there/ has the id that was typed in
 void HashTable::remove(int id){
 
   for (int i = 0; i < size; i++){
@@ -39,6 +39,7 @@ void HashTable::remove(int id){
     }
   }
 }
+//opens the first and last name files/ chooses randomly
 void HashTable::addRandom(int newCount){
 
   char* firsts[100];
@@ -84,6 +85,7 @@ void HashTable::addRandom(int newCount){
     }
   }
 }
+//basic print function
 void HashTable::print(){
 
   for (int i = 0; i < size; i++){
@@ -94,6 +96,7 @@ void HashTable::print(){
     }
   }
 }
+//adds student
 void HashTable::add(Student* student, bool checkCollisions){
   int key = getKey(student);
   if(array[key]){
@@ -112,6 +115,7 @@ void HashTable::add(Student* student, bool checkCollisions){
     array[key] = new Node(student);
   }
 }
+//doubles the array size and then adds one to it so that your remainders are different.
 void HashTable::expand(){
 
   Node** old = array;
@@ -127,6 +131,7 @@ void HashTable::expand(){
   }
   delete old;
 }
+//hash function
 int HashTable::getKey(Student* student){
 
   int toReturn = student->getId();

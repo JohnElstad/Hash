@@ -2,10 +2,11 @@
 #include "HashTable.h"
 #include <cstdlib>
 
-
-
+//John Elstad, This is a Hash table to store students, June 6th
 
 int main(){
+  cout<<"Welcome to Hash Table:"<<endl;
+  cout<<"Valid Commands are: Add, Delete, Print, Random and Quit"<<endl;
   srand (time(NULL));
 
   HashTable* table = new HashTable();
@@ -21,7 +22,7 @@ int main(){
     }
     else if(input[0] == 'd'){
       int id;
-      cout << "What is the ID of the student you want to remove?" << endl;
+      cout << "What is the student ID you want to remove?" << endl;
       cin >> id;
       table->remove(id);
       cin.ignore();
@@ -32,7 +33,7 @@ int main(){
     }
     else if(input[0] == 'r'){
       int number;
-      cout << "How many students do you want?" << endl;
+      cout << "How many random students do you want?" << endl;
       cin >> number;
       cin.ignore();
       table->addRandom(number);
@@ -41,8 +42,8 @@ int main(){
       running = false;
     }
     else{
-      cout << "I don't understand" << endl;
-      cout << "The possible commands are:\nAdd\nDelete\nPrint\nRandom\nQuit" << endl;
+      cout << "Something was mistyped:" << endl;
+      cout << "Valid commands are:\nAdd\nDelete\nPrint\nRandom\nQuit" << endl;
     }
   }
 }
