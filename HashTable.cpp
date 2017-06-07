@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
-
+//John Elstad
 using namespace std;
 //Hash table that cana add students, delete students and randomly add students.
 HashTable::HashTable(){ 

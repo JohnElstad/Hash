@@ -2,7 +2,7 @@
 #include <string.h>
 #include "Node.h"
 
-
+//Your basic node class with student pointer
 using namespace std;
 
 Node::Node(Student* s){

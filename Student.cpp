@@ -1,10 +1,10 @@
-#include <iostream>
+B#include <iostream>
 #include <cstring>
 #include <iomanip>
 #include "Student.h"
 
 using namespace std;
-
+//Student class that contians student info
 
 Student::~Student(){
   delete firstName;
@@ -18,6 +18,7 @@ Student:: Student(int newId, char* first, char* last, float newGpa){
   gpa = newGpa;
 
 }
+//constructor to input data
 Student::Student(){
 
   lastName = new char[30];
